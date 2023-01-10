@@ -69,6 +69,7 @@ export default function Home() {
           <p className="text-center text-3xl">List is empty</p>
         )}
         <CreateCard cardsData={cardsData} setCardsData={setCardsData} />
+        
       </main>
     </>
   );
