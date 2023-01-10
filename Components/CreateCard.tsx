@@ -1,6 +1,7 @@
 import React, { SetStateAction } from "react";
 import { useForm } from "react-hook-form";
 import type { cards } from "../pages";
+import { useRouter } from "next/router";
 
 type inputTitle = {
   card_title: string;
@@ -13,6 +14,7 @@ const CreateCard = ({
   cardsData: cards[];
   setCardsData: React.Dispatch<SetStateAction<cards[]>>;
 }) => {
+  const router = useRouter();
   const { register, handleSubmit, reset } = useForm<inputTitle>();
 
   function onSubmit(data: inputTitle) {
@@ -28,6 +30,7 @@ const CreateCard = ({
         questions: [],
       },
     ]);
+    router.back();
   }
   return (
     <form
