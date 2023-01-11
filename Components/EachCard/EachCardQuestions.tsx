@@ -1,10 +1,16 @@
-import React, { useState } from "react";
-import { cardsType } from "../pages/_app";
+import React, { SetStateAction, useState } from "react";
+import { cardsType } from "../../pages/_app";
 import EachQuestionDisplay from "./EachQuestionDisplay";
 
-const EachCardQuestions = ({ OneCard }: { OneCard: cardsType }) => {
-  const [startQuestions, setStartQuestions] = useState(false);
-
+const EachCardQuestions = ({
+  OneCard,
+  startQuestions,
+  setStartQuestions,
+}: {
+  OneCard: cardsType;
+  startQuestions: boolean;
+  setStartQuestions: React.Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <div>
       {!startQuestions && (

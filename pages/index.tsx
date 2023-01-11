@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { SetStateAction } from "react";
-import CreateCard from "../Components/CreateCard";
-import CardsDisplay from "../Components/CardsDisplay";
+import CreateCard from "../Components/MainPage/CreateCard";
+import CardsDisplay from "../Components/MainPage/CardsDisplay";
 import type { cardsType } from "./_app";
 
 export default function Home({

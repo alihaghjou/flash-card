@@ -2,7 +2,7 @@ import React from "react";
 import { UseFormRegister } from "react-hook-form";
 import { inputFormType } from "./CreateCard";
 
-const InputField = ({
+const CardInputField = ({
   register,
   text,
 }: {
@@ -28,4 +28,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default CardInputField;
