@@ -41,7 +41,6 @@ export type cards = {
   id: string;
   title: string;
   description: string;
-  numberOfQuestions: number;
   questions: question[];
 };
 
