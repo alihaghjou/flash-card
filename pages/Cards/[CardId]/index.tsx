@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import type { cardsType } from "../../_app";
+import EachCardQuestions from "../../../Components/EachCardQuestions";
 
 const Index = ({ cardsData }: { cardsData: cardsType[] }) => {
   const router = useRouter();
@@ -16,9 +17,7 @@ const Index = ({ cardsData }: { cardsData: cardsType[] }) => {
       <p className="mb-6 pb-4 border-b-2 border-b-slate-500 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
         {OneCard.description}
       </p>
-      {OneCard.questions.map((EachQuestion) => (
-        <div key={EachQuestion.questionId}>{EachQuestion.questionBody}</div>
-      ))}
+      <EachCardQuestions OneCard={OneCard} />
     </article>
   );
 };

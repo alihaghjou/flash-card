@@ -43,7 +43,7 @@ export type cardsType = {
   questions: questionType[];
 };
 
-type questionType = {
+export type questionType = {
   questionId: string;
   questionBody: string;
   answer: string;
