@@ -1,20 +1,46 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import QuestionInputField from "./QuestionInputField";
+import { cardsType } from "../../pages/_app";
 
 export type inputQuestionType = {
   Question: string;
   Answer: string;
 };
 
-const CreateQuestion = () => {
+const CreateQuestion = ({
+  cardsData,
+  setCardsData,
+  OneCard,
+}: {
+  cardsData: cardsType[];
+  setCardsData: React.Dispatch<SetStateAction<cardsType[]>>;
+  OneCard: cardsType;
+}) => {
   const { register, handleSubmit, reset } = useForm<inputQuestionType>();
   const [modalOpen, setModalOpen] = useState(false);
 
   function onSubmit(data: inputQuestionType) {
-    console.log(data);
-    reset()
+    const position = cardsData.indexOf(OneCard);
+    const tempQuestion = OneCard.questions;
+    tempQuestion.push({
+      questionId:
+        OneCard.questions.length !== 0
+          ? OneCard.questions[OneCard.questions.length - 1].questionId + 1
+          : "1",
+      questionBody: data.Question,
+      answer: data.Answer,
+    });
+    const tempCard: cardsType = {
+      id: OneCard.id,
+      title: OneCard.title,
+      description: OneCard.description,
+      questions: tempQuestion,
+    };
+    cardsData.splice(position, 1, tempCard);
+    reset();
+    setModalOpen(false);
   }
 
   return (
@@ -44,7 +70,7 @@ const CreateQuestion = () => {
               </button>
               <div className="px-6 py-6 lg:px-8">
                 <h3 className="mb-4 text-xl font-medium text-white">
-                  Sign in to our platform
+                  Create Your Question
                 </h3>
                 <form
                   onSubmit={handleSubmit(onSubmit)}
