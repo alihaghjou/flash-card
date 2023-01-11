@@ -1,58 +1,16 @@
 import Head from "next/head";
-import { useState } from "react";
+import { SetStateAction } from "react";
 import CreateCard from "../Components/CreateCard";
 import CardsDisplay from "../Components/CardsDisplay";
+import type { cardsType } from "./_app";
 
-const initialData = [
-  {
-    id: "id1",
-    title: "card1",
-    description: "description test 1",
-    numberOfQuestions: 20,
-    questions: [
-      {
-        questionId: "Qid1",
-        questionBody: "what is question?",
-        answer: "this is the answer",
-      },
-      {
-        questionId: "Qid2",
-        questionBody: "what is second question?",
-        answer: "this is not the answer",
-      },
-    ],
-  },
-  {
-    id: "id2",
-    title: "card2",
-    description: "description test 2",
-    numberOfQuestions: 30,
-    questions: [
-      {
-        questionId: "Qid1",
-        questionBody: "what is question?",
-        answer: "this is the answer",
-      },
-    ],
-  },
-];
-
-export type cards = {
-  id: string;
-  title: string;
-  description: string;
-  questions: question[];
-};
-
-type question = {
-  questionId: string;
-  questionBody: string;
-  answer: string;
-};
-
-export default function Home() {
-  const [cardsData, setCardsData] = useState<cards[]>(initialData);
-
+export default function Home({
+  cardsData,
+  setCardsData,
+}: {
+  cardsData: cardsType[];
+  setCardsData: React.Dispatch<SetStateAction<cardsType[]>>;
+}) {
   return (
     <>
       <Head>
@@ -68,7 +26,6 @@ export default function Home() {
           <p className="text-center text-3xl">List is empty</p>
         )}
         <CreateCard cardsData={cardsData} setCardsData={setCardsData} />
-        
       </main>
     </>
   );
