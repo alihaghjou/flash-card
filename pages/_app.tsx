@@ -8,7 +8,6 @@ const initialData = [
     id: "id1",
     title: "card1",
     description: "description test 1",
-    numberOfQuestions: 20,
     questions: [
       {
         questionId: "Qid1",
@@ -26,7 +25,6 @@ const initialData = [
     id: "id2",
     title: "card2",
     description: "description test 2",
-    numberOfQuestions: 30,
     questions: [
       {
         questionId: "Qid1",

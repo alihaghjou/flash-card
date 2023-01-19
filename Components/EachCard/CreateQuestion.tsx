@@ -19,7 +19,7 @@ const CreateQuestion = ({
 
   function onSubmit(data: inputQuestionType) {
     const position = cardsData.indexOf(OneCard);
-    const tempQuestion = OneCard.questions;
+    const tempQuestion = [...OneCard.questions];
     tempQuestion.push({
       questionId:
         OneCard.questions.length !== 0
@@ -34,8 +34,9 @@ const CreateQuestion = ({
       description: OneCard.description,
       questions: tempQuestion,
     };
-    cardsData.splice(position, 1, tempCard);
-    setCardsData(cardsData)
+    const tempData = [...cardsData];
+    tempData.splice(position, 1, tempCard);
+    setCardsData(tempData);
     reset();
     setModalOpen(false);
   }

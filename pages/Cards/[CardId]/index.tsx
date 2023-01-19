@@ -7,7 +7,8 @@ import Image from "next/image";
 import type { cardsType } from "../../../types/Types";
 import EachPageHead from "../../../Components/EachPageHead";
 
-//TODO: fix create question and showing start question button after that
+//Todo: when user isn't logged in use localhost and if logged use database
+//TODO: add auth to project than add prisma and mongodb to project
 
 const Index = ({
   cardsData,
@@ -34,6 +35,12 @@ const Index = ({
           <p className="mb-4 pb-4  text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             {OneCard.title}
           </p>
+          <p className="text-lg mb-2 pb-2 font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48">
+            Number of Questions:{" "}
+            <span className="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+              {OneCard.questions.length}
+            </span>
+          </p>
           <p className="   text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
             {OneCard.description}
           </p>
@@ -46,7 +53,6 @@ const Index = ({
               setStartQuestions={setStartQuestions}
             />
           ) : null}
-
           {!startQuestions && (
             <CreateQuestion
               cardsData={cardsData}
