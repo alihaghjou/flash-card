@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import type { cardsType } from "../../pages/_app";
 import Image from "next/image";
+import type { cardsType } from "../../types/Types";
 
 const CardsDisplay = ({ cardsData }: { cardsData: cardsType[] }) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { UseFormRegister } from "react-hook-form";
-import { inputQuestionType } from "./CreateQuestion";
+import type { inputQuestionType } from "../../types/InputTypes";
 
 const QuestionInputField = ({
   register,
@@ -20,8 +20,8 @@ const QuestionInputField = ({
       <textarea
         {...register(text, { required: true })}
         id={text}
-        rows={4}
-        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        rows={5}
+        className="block p-2.5 w-full text-sm bg-gray-700 rounded-lg border focus:ring-blue-500 focus:border-blue-500 focus-visible:ring-blue-500 focus-visible:border-blue-500 placeholder-gray-400 text-white border-gray-600"
         placeholder="Write your thoughts here..."
       ></textarea>
     </div>

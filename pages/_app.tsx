@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import type { cardsType } from "../types/Types";
 
 const initialData = [
   {
@@ -36,18 +37,7 @@ const initialData = [
   },
 ];
 
-export type cardsType = {
-  id: string;
-  title: string;
-  description: string;
-  questions: questionType[];
-};
 
-export type questionType = {
-  questionId: string;
-  questionBody: string;
-  answer: string;
-};
 
 export default function App({ Component, pageProps }: AppProps) {
   const [cardsData, setCardsData] = useState<cardsType[]>(initialData);

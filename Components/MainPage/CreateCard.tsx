@@ -1,13 +1,9 @@
 import React, { SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
-import type { cardsType } from "../../pages/_app";
 import Image from "next/image";
 import CardInputField from "./CardInputField";
-
-export type inputFormType = {
-  Card_Title: string;
-  Description: string;
-};
+import type { cardsType } from "../../types/Types";
+import type { inputCreateCardType } from "../../types/InputTypes";
 
 const CreateCard = ({
   cardsData,
@@ -16,10 +12,10 @@ const CreateCard = ({
   cardsData: cardsType[];
   setCardsData: React.Dispatch<SetStateAction<cardsType[]>>;
 }) => {
-  const { register, handleSubmit, reset } = useForm<inputFormType>();
+  const { register, handleSubmit, reset } = useForm<inputCreateCardType>();
   const [modalOpen, setModalOpen] = useState(false);
 
-  function onSubmit(data: inputFormType) {
+  function onSubmit(data: inputCreateCardType) {
     reset();
     setCardsData([
       ...cardsData,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { questionType } from "../../pages/_app";
+import type { questionType } from "../../types/Types";
 
 const EachQuestionDisplay = ({
   EachQuestion,

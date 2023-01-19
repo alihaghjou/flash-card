@@ -2,12 +2,8 @@ import React, { SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import QuestionInputField from "./QuestionInputField";
-import { cardsType } from "../../pages/_app";
-
-export type inputQuestionType = {
-  Question: string;
-  Answer: string;
-};
+import type { inputQuestionType } from "../../types/InputTypes";
+import type { cardsType } from "../../types/Types";
 
 const CreateQuestion = ({
   cardsData,
@@ -39,6 +35,7 @@ const CreateQuestion = ({
       questions: tempQuestion,
     };
     cardsData.splice(position, 1, tempCard);
+    setCardsData(cardsData)
     reset();
     setModalOpen(false);
   }

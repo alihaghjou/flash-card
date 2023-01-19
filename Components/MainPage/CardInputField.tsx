@@ -1,13 +1,13 @@
 import React from "react";
 import { UseFormRegister } from "react-hook-form";
-import { inputFormType } from "./CreateCard";
+import type { inputCreateCardType } from "../../types/InputTypes";
 
 const CardInputField = ({
   register,
   text,
 }: {
   text: "Card_Title" | "Description";
-  register: UseFormRegister<inputFormType>;
+  register: UseFormRegister<inputCreateCardType>;
 }) => {
   return (
     <div className="relative z-0 w-full">

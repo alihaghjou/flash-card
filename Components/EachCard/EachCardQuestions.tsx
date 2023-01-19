@@ -1,6 +1,6 @@
-import React, { SetStateAction, useState } from "react";
-import { cardsType } from "../../pages/_app";
+import React, { SetStateAction } from "react";
 import EachQuestionDisplay from "./EachQuestionDisplay";
+import type { cardsType } from "../../types/Types";
 
 const EachCardQuestions = ({
   OneCard,
