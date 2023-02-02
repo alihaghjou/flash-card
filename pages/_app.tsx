@@ -35,8 +35,6 @@ const initialData = [
   },
 ];
 
-
-
 export default function App({ Component, pageProps }: AppProps) {
   const [cardsData, setCardsData] = useState<cardsType[]>(initialData);
 
