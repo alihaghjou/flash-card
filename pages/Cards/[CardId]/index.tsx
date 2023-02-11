@@ -9,7 +9,6 @@ import EachPageHead from "../../../Components/EachPageHead";
 
 //Todo: when user isn't logged in use localhost and if logged use database
 //TODO: add auth to project than add prisma and mongodb to project
-//todo: question displays be Carousel
 //todo: user can edit their card and each question 
 
 const Index = ({

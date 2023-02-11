@@ -7,7 +7,7 @@ const EachQuestionDisplay = ({ OneCard }: { OneCard: cardsType }) => {
   const [showAnswer, setShowAnswer] = useState(false);
   return (
     <>
-      <article className="flex gap-20 my-10">
+      <article className="flex gap-20 my-10 max-w-4xl">
         <button
           disabled={index == 0 ? true : false}
           onClick={() => {
